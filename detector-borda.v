@@ -12,8 +12,8 @@ always @(posedge clk or posedge rst) begin
         entrada_antiga = 0;
         detector = 0;
     end else begin
-        detector = (~entrada_antiga) & entrada;
-        entrada_antiga = entrada;
+        detector = (~entrada_antiga) & entrada; // Entrada antiga = 0 e entrada atual = 1 para detectar a borda
+        entrada_antiga = entrada; // Atualiza a entrada antiga com o valor atual
     end
 end
 
